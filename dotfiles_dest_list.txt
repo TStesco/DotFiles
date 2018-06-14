@@ -1,3 +1,4 @@
 /home/tom/.i3/
 /home/tom/.Xresources
 /home/tom/.vifm/
+/home/tom/.Xmodmap
