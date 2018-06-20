@@ -2,3 +2,5 @@
 /home/tom/.Xresources
 /home/tom/.vifm/
 /home/tom/.Xmodmap
+/home/tom/.tmux/
+/home/tom/.bashrc

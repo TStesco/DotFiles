@@ -1,13 +1,17 @@
 ! General settings
 UXTerm*termName: xterm-256color
 UXTerm*saveLines: 2048
-UXTerm*scrollBar: False
 UXTerm*loginshell: False
 UXTerm*cursorBlink: False
 
+! Scrollbar
+UXTerm*scrollBar: False
+UXTerm*rightScrollBar: False
+
+
 ! Fix alt-key inputting
-UXTerm*eightBitInput: false
-UXTerm*metaSendsEscape: true
+UXTerm*eightBitInput: False
+UXTerm*metaSendsEscape: True
 
 ! Copy and paste with clipboard
 UXTerm*translations: #override \
@@ -23,7 +27,7 @@ UXTerm*locale: True
 UXTerm*utf8Title: True
 UXTerm*renderFont: True
 UXTerm*preeditType: Root
-UXTerm*xftAntialias: true
+UXTerm*xftAntialias: True
 UXTerm*faceName: xft:Terminus-10
 !UXterm*faceSize: 10
 
@@ -52,4 +56,4 @@ UXTerm*color15: rgb:fc/fc/fc
 UXTerm*boldMode: false
 UXTerm*colorBDMode: true
 UXTerm*colorBD: rgb:fc/fc/fc
-UXTerm*dynamicColors:      true
+UXTerm*dynamicColors: true

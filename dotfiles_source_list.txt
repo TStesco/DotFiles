@@ -2,3 +2,5 @@
 .Xresources
 .vifm
 .Xmodmap
+.tmux
+.bashrc
