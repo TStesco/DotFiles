@@ -4,3 +4,4 @@
 .Xmodmap
 .tmux
 .bashrc
+tmuxinator

@@ -118,7 +118,10 @@ fi
 
 ############################  user added  ################################
 synclient TouchpadOff=1
-export PATH=$PATH:/home/tom/anaconda3/bin:
+export PATH="$PATH:/home/tom/anaconda3/bin:"
+# for tmuxinator
+export EDITOR="vim"
+source ~/.bin/tmuxinator.bash
 #export PATH=$PATH:/usr/local/MATLAB/R2017b/bin:
 # node volume manager signicantly slows terminal startup
 #export NVM_DIR="$HOME/.nvm"

@@ -4,3 +4,4 @@
 /home/tom/.Xmodmap
 /home/tom/.tmux/
 /home/tom/.bashrc
+/home/tom/.config/tmuxinator
