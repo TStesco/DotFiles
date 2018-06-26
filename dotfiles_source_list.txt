@@ -1,7 +1,0 @@
-.i3
-.Xresources
-.vifm
-.Xmodmap
-.tmux
-.bashrc
-tmuxinator

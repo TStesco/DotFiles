@@ -1,10 +1,10 @@
-# /home/tom/.config/tmuxinator/foo.yml
+# /home/tom/.config/tmuxinator/jmodelica.yml
 
-name: foo
+name: euler
 root: ~/
 
 # Optional tmux socket
-# socket_name: foo
+# socket_name: jmodelica
 
 # Runs before everything. Use it to start daemons etc.
 # pre: sudo /etc/rc.d/mysqld start
@@ -43,13 +43,21 @@ root: ~/
 # post: tmux -CC attach -t foo
 
 windows:
-  - editor:
+  - euler:
+      root: ~/projects/
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
+      pre:
+        - ssh tstesco@euler.ethz.ch 
       panes:
-        - vim
-        - guard
-  - server: bundle exec rails s
-  - logs: tail -f log/development.log
+        - woo: 
+          - cd $SCRATCH && source $SCRATCH/opt/miniconda/bin/activate pymc3env
+        - wwo:
+          - cd $SCRATCH
+  - output:
+      root: ~/projects/modelica-env/src/output
+      layout: main-vertical
+      panes:
+        - bash
