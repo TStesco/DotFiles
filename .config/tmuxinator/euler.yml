@@ -50,11 +50,11 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       pre:
-        - ssh tstesco@euler.ethz.ch 
+        - ssh tstesco@euler.ethz.ch
       panes:
-        - woo: 
+        - p1: 
           - cd $SCRATCH && source $SCRATCH/opt/miniconda/bin/activate pymc3env
-        - wwo:
+        - p2:
           - cd $SCRATCH
   - output:
       root: ~/projects/modelica-env/src/output
