@@ -15,8 +15,8 @@ UXTerm*metaSendsEscape: True
 
 ! Copy and paste with clipboard
 UXTerm*translations: #override \
-	Ctrl Shift <KeyPress> C: copy-selection(CLIPBOARD) \n\
-	Ctrl Shift <KeyPress> V: insert-selection(CLIPBOARD)
+    Ctrl Shift <KeyPress> C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <KeyPress> V: insert-selection(CLIPBOARD)
 
 ! Trim trailing spaces
 UXTerm*trimSelection: true

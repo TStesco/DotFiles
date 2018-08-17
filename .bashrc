@@ -122,11 +122,15 @@ export PATH="$PATH:/home/tom/anaconda3/bin:"
 # for tmuxinator
 export EDITOR="vim"
 source ~/.bin/tmuxinator.bash
+export SCRATCH=/cluster/scratch/tstesco
+export ELR=tstesco@euler.ethz.ch
+# powerline config
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /usr/local/lib/python3.5/dist-packages/powerline/bindings/bash/powerline.sh
 #export PATH=$PATH:/usr/local/MATLAB/R2017b/bin:
 # node volume manager signicantly slows terminal startup
-#export NVM_DIR="$HOME/.nvm"
-# This loads nvm
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-# This loads nvm bash_completion
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
-
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
