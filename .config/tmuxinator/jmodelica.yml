@@ -50,20 +50,20 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - docker start brave_clarke && docker exec -it brave_clarke bash
+        - make dev
         - sudo subl .
-  - interpreter: 
+  - docker: 
       root: ~/projects/modelica-env/
       layout: main-vertical
       panes:
-        - source activate pymc3env
+        - docker ps -a
         -
-  - docker: 
-      root: ~/projects/modelica-env/docker
+  - interpreter: 
+      root: ~/projects/modelica-env/
       layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - docker start brave_clarke && docker exec -it brave_clarke bash
-        - docker start brave_clarke && docker exec -it brave_clarke bash
+        - 
+        -
