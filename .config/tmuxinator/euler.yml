@@ -53,9 +53,9 @@ windows:
         - ssh tstesco@euler.ethz.ch
       panes:
         - p1: 
-          - cd $SCRATCH && source $SCRATCH/opt/miniconda/bin/activate pymc3env
-        - p2:
           - cd $SCRATCH
+        - p2:
+          - cd $SCRATCH && . env_setup.sh
   - output:
       root: ~/projects/modelica-env/src/output
       layout: main-vertical
