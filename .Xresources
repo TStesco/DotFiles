@@ -1,6 +1,6 @@
 ! General settings
 UXTerm*termName: xterm-256color
-UXTerm*saveLines: 2048
+UXTerm*saveLines: 5000
 UXTerm*loginshell: False
 UXTerm*cursorBlink: False
 
