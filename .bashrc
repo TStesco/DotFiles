@@ -121,7 +121,7 @@ synclient TouchpadOff=1
 export PATH="$PATH:/home/tom/anaconda3/bin:"
 # for tmuxinator
 export EDITOR="vim"
-source ~/.bin/tmuxinator.bash
+source ~/.config/tmuxinator/tmuxinator.bash
 export SCRATCH=/cluster/scratch/tstesco
 export ELR=tstesco@euler.ethz.ch
 # powerline config
