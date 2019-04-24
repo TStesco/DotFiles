@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=40000
+HISTFILESIZE=80000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -88,9 +88,10 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -alhFtr'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls -aCF'
+alias dc='cd'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -117,19 +118,36 @@ if ! shopt -oq posix; then
 fi
 
 ############################  user added  ################################
-# synclient TouchpadOff=1
-export PATH="$PATH:/home/tom/anaconda3/bin:"
+#synclient TouchpadOff=1
+#export PATH="$PATH:/home/tom/anaconda3/bin:"
 # for tmuxinator
 export EDITOR="vim"
 source ~/.config/tmuxinator/tmuxinator.bash
-export SCRATCH=/cluster/scratch/tstesco
-export ELR=tstesco@euler.ethz.ch
-# powerline config
-# powerline-daemon -q
-# POWERLINE_BASH_CONTINUATION=1
-# POWERLINE_BASH_SELECT=1
-# . /usr/local/lib/python3.5/dist-packages/powerline/bindings/bash/powerline.sh
+# remap any keys
+# remap caps lock to control
+#xmodmap -e "remove lock = CapsLock"
+xmodmap -e "keycode 66 = Control_L"
+#xmodmap ~/.Xmodmap
+# for CUDA: https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions
+export PATH="/usr/local/cuda-10.1/bin:/usr/local/cuda-10.1/NsightCompute-2019.1:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH"
+#export SCRATCH=/cluster/scratch/tstesco
+#export ELR=tstesco@euler.ethz.ch
 # node volume manager signicantly slows terminal startup
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/tom/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/tom/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/tom/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/tom/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
