@@ -123,11 +123,6 @@ fi
 # for tmuxinator
 export EDITOR="vim"
 source ~/.config/tmuxinator/tmuxinator.bash
-# remap any keys
-# remap caps lock to control
-#xmodmap -e "remove lock = CapsLock"
-xmodmap -e "keycode 66 = Control_L"
-#xmodmap ~/.Xmodmap
 # for CUDA: https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions
 export PATH="/usr/local/cuda-10.1/bin:/usr/local/cuda-10.1/NsightCompute-2019.1:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH"

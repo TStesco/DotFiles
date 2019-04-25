@@ -5,3 +5,5 @@ DOTFILES_DEST="$HOME"
 rsync -va --exclude ".git" --exclude "LICENSE" --exclude "README.md" \
     --exclude ".gitignore" --exclude "rsync_src_to_dst.sh" \
     "$DOTFILES_SOURCE" "$DOTFILES_DEST"
+
+# TODO move 50-kayboard.conf to /etc/X11/xorg.conf.d/
