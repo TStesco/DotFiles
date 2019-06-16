@@ -124,6 +124,10 @@ export EDITOR="vim"
 source ~/.config/tmuxinator/tmuxinator.bash
 # for CUDA: https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions
 export PATH="$PATH:/usr/local/cuda-10.1/bin:/usr/local/cuda-10.1/NsightCompute-2019.1"
+# for pyenv
+export PATH="/home/tom/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 # for user installed pipenv: https://docs.pipenv.org/en/latest/install/#using-installed-packages
 export PATH="$PATH:~/.local/bin"
 export LD_LIBRARY_PATH="/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH"
