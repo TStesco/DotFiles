@@ -119,15 +119,14 @@ fi
 
 ############################  user added  ################################
 #synclient TouchpadOff=1
-#export PATH="$PATH:/home/tom/anaconda3/bin:"
 # for tmuxinator
 export EDITOR="vim"
 source ~/.config/tmuxinator/tmuxinator.bash
 # for CUDA: https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions
-export PATH="/usr/local/cuda-10.1/bin:/usr/local/cuda-10.1/NsightCompute-2019.1:$PATH"
+export PATH="$PATH:/usr/local/cuda-10.1/bin:/usr/local/cuda-10.1/NsightCompute-2019.1"
+# for user installed pipenv: https://docs.pipenv.org/en/latest/install/#using-installed-packages
+export PATH="$PATH:~/.local/bin"
 export LD_LIBRARY_PATH="/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH"
-#export SCRATCH=/cluster/scratch/tstesco
-#export ELR=tstesco@euler.ethz.ch
 # node volume manager signicantly slows terminal startup
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
