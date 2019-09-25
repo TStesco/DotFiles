@@ -149,3 +149,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# pipenv bash completion magic
+eval "$(pipenv --completion)"
