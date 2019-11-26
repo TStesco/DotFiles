@@ -152,3 +152,5 @@ unset __conda_setup
 
 # pipenv bash completion magic
 eval "$(pipenv --completion)"
+# direnv
+eval "$(direnv hook bash)"
