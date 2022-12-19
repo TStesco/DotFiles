@@ -1,4 +1,4 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
+# ~/.bashrc: executed by bash(1) for login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=40000
-HISTFILESIZE=80000
+HISTSIZE=400000
+HISTFILESIZE=800000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -57,9 +57,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]\[\033[00m\]$(__git_ps1 "[%s]"):\[\033[01;34m\]\w\[\033[00m\]$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h$(__git_ps1 "[%s]"):\w$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -91,7 +91,19 @@ fi
 alias ll='ls -alhFtr'
 alias la='ls -A'
 alias l='ls -aCF'
+alias rm='rm'
 alias dc='cd'
+alias gs='git status'
+alias gl='git log --oneline -10'
+alias gb='git branch -v'
+alias gpl='git pull'
+alias gc='git commit -m'
+alias ga='git add'
+alias gd='git diff'
+alias gch='git checkout'
+alias gph='git push'
+alias gphu='git push -u origin `git branch --show-current`'
+alias hist='history|grep'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -118,39 +130,3 @@ if ! shopt -oq posix; then
 fi
 
 ############################  user added  ################################
-#synclient TouchpadOff=1
-# for tmuxinator
-export EDITOR="vim"
-source ~/.config/tmuxinator/tmuxinator.bash
-# for CUDA: https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions
-export PATH="$PATH:/usr/local/cuda-10.1/bin:/usr/local/cuda-10.1/NsightCompute-2019.1"
-# for pyenv
-export PATH="/home/tom/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-# for user installed pipenv: https://docs.pipenv.org/en/latest/install/#using-installed-packages
-export PATH="$PATH:~/.local/bin"
-export LD_LIBRARY_PATH="/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH"
-# node volume manager signicantly slows terminal startup
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/tom/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/tom/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/tom/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/tom/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# pipenv bash completion magic
-eval "$(pipenv --completion)"
-# direnv
-eval "$(direnv hook bash)"

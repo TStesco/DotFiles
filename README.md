@@ -1,8 +1,11 @@
 # DotFiles
-Configuration files for work environment. The structure of this repo mimics $HOME
-to allow rsync to easily update the files for this source.
+Configuration files for normal linux environment across Ubuntu and MacOS.
 
-Too rsync dotfiles in destination with these source files after pull from repo:
 ```bash
-. rsync_src_to_dst.sh
+# download git prompt script
+wget -O ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+
+# make symlinks for tmux conf and bash profile
+ln -s -f ~/projects/DotFiles/.tmux.conf ~/.tmux.conf
+ln -s -f ~/projects/DotFiles/.bash_profile ~/.bash_profile
 ```
